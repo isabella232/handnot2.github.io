@@ -1,0 +1,26 @@
+title: Hangar
+baseurl: ""
+github_username: handnot2
+author: handnot2
+repository: handnot2/handnot2.github.io
+incremental: true
+
+social:
+  name: handnot2
+  links:
+    - https://github.com/handnot2
+
+theme: jekyll-theme-modernist
+markdown: kramdown
+highlighter: rouge
+
+gems:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
