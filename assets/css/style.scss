@@ -55,10 +55,13 @@ blockquote {
   background: rgba(lavender, 0.13);
 }
 
-code, pre {
+code.highlighter-rouge {
   font-family: "Source Code Pro", Monospace;
-  font-size: 16px;
+  font-size: 15px;
   color: #222;
+  background: linear-gradient(rgba(wheat, 0.4), rgba(wheat, 0.4)) no-repeat;
+  background-size: 100% 5px;
+  background-position: 0 0.9em;
 }
 
 pre {
