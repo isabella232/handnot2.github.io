@@ -7,7 +7,7 @@
       {{ site.title | default: site.github.repository_name }} by
       {{ site.github.owner_name }}
     </title>
-    <meta name="twitter:card" content="summary_large_image">
+    {% include twitter_card.html %}
 
     <link rel='stylesheet'
           type='text/css'

@@ -15,7 +15,8 @@ theme: jekyll-theme-modernist
 markdown: kramdown
 highlighter: rouge
 
-gems:
+plugins:
+  - jekyll-github-metadata
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-redirect-from
