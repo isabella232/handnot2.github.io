@@ -2,10 +2,19 @@
 layout: default
 title: Drone Playground using Docker Compose
 permalink: /blog/drone/playground-setup
-image: /assets/images/drone-playground-with-docker-compose.png
+image: /assets/images/delivery.jpg
 categories: drone
 description: A Drone CI/CD setup using Docker Compose, Gitea and Minio.
 ---
+{% if page.index_page %}
+[![Continuous Delivery](/assets/images/delivery.jpg)](/blog/drone/playground-setup)
+{% else %}
+![Continuous Delivery](/assets/images/delivery.jpg)
+{% endif %}<sup><sup>
+  Photo by [Maarten van den Heuvel](https://unsplash.com/@mvdheuvel)
+  on [Unsplash](https://unsplash.com)
+</sup></sup>
+<br/>
 This guide walks through a Docker Compose based setup of Drone 0.5 along with
 Gitea Git Service and AWS S3 compatible Minio Storage Service. The primary
 purpose is to have a local setup that enables you to play around with Drone.

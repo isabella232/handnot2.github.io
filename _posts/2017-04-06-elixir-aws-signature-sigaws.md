@@ -2,10 +2,19 @@
 layout: default
 title: Sigaws/PlugSigaws - Elixir Libraries to enable signature authentication for REST APIs
 permalink: /blog/elixir/aws-signature-sigaws
-image: /assets/images/elixir-aws-signature-sigaws.png
+image: /assets/images/signature-authentication.jpg
 categories: elixir
 description: Enable AWS Signature authentication for your Phoenix web resources and API endpoints.
 ---
+{% if page.index_page %}
+[![Signature Authentication](/assets/images/signature-authentication.jpg)](/blog/elixir/aws-signature-sigaws)
+{% else %}
+![Signature Authentication](/assets/images/signature-authentication.jpg)
+{% endif %}<sup><sup>
+  Photo by [Suganth](https://unsplash.com/@suganth)
+  on [Unsplash](https://unsplash.com)
+</sup></sup>
+<br/>
 `Sigaws` is an Elixir library that allows you to sign and verify HTTP requests.
 This library does not dictate how you compose and send HTTP requests.
 The signing functions in this library works with the HTTP request information
@@ -87,7 +96,7 @@ end
 
 ### Update Phoenix API Pipeline
 
-Edit your `router.ex` file and add the signature verification plug to your 
+Edit your `router.ex` file and add the signature verification plug to your
 API pipeline.
 
 ```elixir
