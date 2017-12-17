@@ -6,7 +6,7 @@ image: /assets/images/authentication.jpg
 categories: auth saml elixir phoenix shibboleth
 description: Enable SAML authentication for Elixir/Phoenix applications.
 ---
-{% if page.index_page %}
+{% if page.index_page == true %}
 [![Authentication](/assets/images/authentication.jpg)](/blog/auth/saml-auth-for-phoenix)
 {% else %}
 ![Authentication](/assets/images/authentication.jpg)
@@ -16,12 +16,12 @@ description: Enable SAML authentication for Elixir/Phoenix applications.
 </sup></sup>
 <br/>
 Want to enable SAML 2.0 SSO authentication in your Elixir/Phoenix application?
-It is fairly easy to do using the [`samly`](https://github.com/handnot2/samly)
+It is fairly easy to do using the [`Samly`](https://github.com/handnot2/samly)
 Elixir library.
 
 `Samly` is known to work with
 [`SimpleSAMLphp`](https://simplesamlphp.org/),
-[`Sibboleth`](https://www.shibboleth.net/). It has been tried with a few
+[`Shibboleth`](https://www.shibboleth.net/). It has been tried with a few
 cloud based commercial SAML providers as well.
 
 Let us get a bit of terminology clarified up front. Your Phoenix/Plug-based
@@ -100,7 +100,7 @@ sudo bin/1_setup_shibb_idp.sh
 ```
 
 > This command shows a sequence of prompts expecting input. **Simply accept**
-> the defaults recommended within square backets with Enter/Return key.
+> the defaults recommended within square brackets with Enter/Return key.
 > When prompted, enter passwords for "backchannel" and "cookie encryption".
 > **Make sure to note down the backchannel PKCS12 password.**
 
@@ -180,7 +180,7 @@ sudo docker logs samly_shibb_idp
 #### Fetch IdP Metadata File
 
 We need to get a copy of the IdP Metadata XML file from this setup
-that we can use to configure SAML SP (`samly` enabled Phoenix application).
+that we can use to configure SAML SP (`Samly` enabled Phoenix application).
 
 > We need to be able to reach the Shibboleth IdP by the hostname "`shibb.idp`".
 >
@@ -202,14 +202,14 @@ are provided in the next part.
 ### Part 2: Get it right with a Demo Phoenix application
 
 The configuration that is! As mentioned before, the demo Phoenix application
-`samly_howto` serves two purposes. It is a showcase on how to use the `samly`
+`samly_howto` serves two purposes. It is a showcase on how to use the `Samly`
 Elixir library. It is also useful to make sure that you get the SAML SP
 configuration right when talking to the IdP.
 
 #### Setup SAML SP - SamlyHowto Application
 
 Follow these instructions to clone the demo application repo, generate
-the keys and cert needed for `samly` and fetch the `npm` packages needed
+the keys and cert needed for `Samly` and fetch the `npm` packages needed
 for the web UI.
 
 ```sh
@@ -258,7 +258,7 @@ wget --no-check-certificate -O sp_metadata.xml \
 ```
 
 > The instructions for registering the SAML SP are very specific to IdPs.
-> If you are working with an already avaiable SAML IdP installation, follow the
+> If you are working with an already available SAML IdP installation, follow the
 > instructions from that vendor. All information you need for the registration
 > are available in `sp_metadata.xml` file.
 
@@ -308,20 +308,20 @@ Try out the **Sign out** button as well to complete the logout process.
 There is a handy SAML Tracer browser plugin that is very helpful to view the
 SAML requests and responses between SP and IdP. Google it.
 
-Make sure to check out the `samly` documentation on various configuration choices
+Make sure to check out the `Samly` documentation on various configuration choices
 it offers. Sometimes, you run into issues talking to SAML providers because those
 providers do not sign their requests by default. `Samly` by default signs its
 requests and expects signed responses. You can either make sure that signing
-is enabled at IdP or turn it off at `samly`.
+is enabled at IdP or turn it off at `Samly`.
 
-> Congratulations! You have a working SAML authentication setup now. The `samly`
+> Congratulations! You have a working SAML authentication setup now. The `Samly`
 > related config settings in the `config/dev.exs` file is what you need in your
 > own Phoenix application. This takes us to the third part.
 
 ### Part 3: Integrate Samly into your application
 
 Having gotten this far, you should not have any major surprises. Most of what is
-here is covered in `samly` documentation. Start with dependency related changes
+here is covered in `Samly` documentation. Start with dependency related changes
 to your `mix.exs` and update the dependencies.
 
 ```elixir
@@ -366,7 +366,7 @@ end
 to IdP. You can use `openssl` for this or take advantage of the `gencert.sh` from
 Part 2.
 
-Now bring in the `samly` related configuration from Part 2 to your application,
+Now bring in the `Samly` related configuration from Part 2 to your application,
 making accommodations for any name changes.
 
 > :triangular_flag_on_post: Follow the instructions in Part Two on how to
@@ -375,7 +375,7 @@ making accommodations for any name changes.
 
 #### Login/Logout URLs
 
-Check out the `samly` documentation. It explains the routing URLs. You can also
+Check out the `Samly` documentation. It explains the routing URLs. You can also
 checkout the `samly_howto` demo application as your reference.
 
 #### Protecting your application routes

@@ -6,7 +6,7 @@ image: /assets/images/delivery.jpg
 categories: drone
 description: A Drone CI/CD setup using Docker Compose, Gitea and Minio.
 ---
-{% if page.index_page %}
+{% if page.index_page == true %}
 [![Continuous Delivery](/assets/images/delivery.jpg)](/blog/drone/playground-setup)
 {% else %}
 ![Continuous Delivery](/assets/images/delivery.jpg)

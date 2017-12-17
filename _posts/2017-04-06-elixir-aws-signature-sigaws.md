@@ -6,7 +6,7 @@ image: /assets/images/signature-authentication.jpg
 categories: elixir
 description: Enable AWS Signature authentication for your Phoenix web resources and API endpoints.
 ---
-{% if page.index_page %}
+{% if page.index_page == true %}
 [![Signature Authentication](/assets/images/signature-authentication.jpg)](/blog/elixir/aws-signature-sigaws)
 {% else %}
 ![Signature Authentication](/assets/images/signature-authentication.jpg)
